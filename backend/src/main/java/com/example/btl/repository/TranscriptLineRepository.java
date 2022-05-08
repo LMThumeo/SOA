@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface TranscriptLineRepository extends JpaRepository<TranscriptLine, Integer> {
 
-    List<TranscriptLine> findByStudyClassId(int studyClassId);
+    List<TranscriptLine> findByStudentId(int studentId);
 }

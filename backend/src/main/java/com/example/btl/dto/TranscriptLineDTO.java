@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.List;
 
 @Data
@@ -24,6 +25,9 @@ public class TranscriptLineDTO {
 
     @JsonProperty("student")
     private StudentDTO student;
+
+    @JsonProperty("reexamination_deadline")
+    private Date reexaminationDeadline;
 
     @JsonProperty("transcript_item")
     private List<TranscriptItemDTO> transcriptItems;

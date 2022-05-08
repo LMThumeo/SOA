@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -19,6 +20,9 @@ public class TranscriptLine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "reexamination_deadline")
+    private Date reexaminationDeadline;
 
     @ManyToOne
     @JoinColumn(name = "study_class_id", referencedColumnName = "id")

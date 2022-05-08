@@ -19,7 +19,7 @@ public class TranscriptItem implements Serializable {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "transcript_id", referencedColumnName = "id")
+    @JoinColumn(name = "transcript_line_id", referencedColumnName = "id")
     private TranscriptLine transcriptLine;
 
     @ManyToOne

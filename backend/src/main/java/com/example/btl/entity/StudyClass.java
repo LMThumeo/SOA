@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "study_class")
@@ -31,6 +32,9 @@ public class StudyClass implements Serializable {
     @ManyToOne
     @JoinColumn(name = "subject_semester_id", referencedColumnName = "id")
     private SubjectSemester subjectSemester;
+
+    @OneToMany(mappedBy = "studyClass")
+    private List<TranscriptLine> transcriptLines;
 
 //    @ManyToOne
 //    @JoinColumn(name = "teacher_id", referencedColumnName = "id")
