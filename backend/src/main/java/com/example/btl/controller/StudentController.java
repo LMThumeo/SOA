@@ -17,12 +17,10 @@ import java.util.List;
 public class StudentController {
 
     final private StudentService studentService;
-    final private SubjectService subjectService;
 
     @Autowired
-    public StudentController(StudentService studentService, SubjectService subjectService) {
+    public StudentController(StudentService studentService) {
         this.studentService = studentService;
-        this.subjectService = subjectService;
     }
 
     @GetMapping
@@ -30,10 +28,4 @@ public class StudentController {
         StudentDTO studentDTO = studentService.login(studentLogin);
         return new ResponseEntity<>(studentDTO, HttpStatus.OK);
     }
-
-//    @GetMapping("/{id}/form")
-//    public ResponseEntity<?> getInformation(@PathVariable("id") int studentId) {
-//        List<TranscriptLineDTO> transcriptLineDTO = studentService.getInformation(studentId);
-//        return new ResponseEntity<>(transcriptLineDTO, HttpStatus.OK);
-//    }
 }

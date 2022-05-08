@@ -1,15 +1,18 @@
 package com.example.btl.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 
 @Entity
 @Table(name = "reexamination")
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Reexamination implements Serializable {
@@ -23,6 +26,9 @@ public class Reexamination implements Serializable {
 
     @Column(name = "point")
     private String point;
+
+    @Column(name = "submit_time")
+    private Date submitTime;
 
     @OneToOne
     @JoinColumn(name = "transcript_line_id", referencedColumnName = "id")

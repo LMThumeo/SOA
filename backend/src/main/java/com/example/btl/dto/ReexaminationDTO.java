@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 
 @Data
 @Builder
@@ -24,6 +25,9 @@ public class ReexaminationDTO{
     @JsonProperty("point")
     private float point;
 
-    @JsonProperty("transcriptItem")
-    private TranscriptItemDTO transcriptItem;
+    @JsonProperty("submit_time")
+    private Date submitTime;
+
+    @JsonProperty("transcriptLine")
+    private TranscriptLineDTO transcriptLine;
 }
