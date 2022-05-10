@@ -9,4 +9,8 @@ public interface ReexaminationService {
     List<ReexaminationDTO> getReexaminationByStudent(int studentId);
 
     ReexaminationDTO submitForm(int studentId, int semesterId, int subjetcId);
+
+    List<ReexaminationDTO> getAllReexamination();
+
+    ReexaminationDTO updatePointReexamination(ReexaminationDTO reexaminationDTO);
 }

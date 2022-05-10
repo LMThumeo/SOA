@@ -1,10 +1,9 @@
 package com.example.btl.exception;
 
-import com.example.btl.exception.common.StudentServiceError;
-import com.example.btl.exception.common.StudentServiceException;
+import com.example.btl.exception.common.NotFoundException;
 
-public class StudentNotFoundException extends StudentServiceException {
+public class StudentNotFoundException extends NotFoundException {
     public StudentNotFoundException() {
-        super(StudentServiceError.STUDENT_NOT_FOUND);
+        super(404, "Login failed");
     }
 }

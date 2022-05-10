@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/subjects")
+@CrossOrigin("*")
 public class SubjectController {
 
     final private SubjectService subjectService;
