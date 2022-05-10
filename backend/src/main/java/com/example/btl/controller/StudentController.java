@@ -24,7 +24,7 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping
+    @PostMapping
     public ResponseEntity<?> login(@RequestBody StudentLoginDTO studentLogin) {
         StudentDTO studentDTO = studentService.login(studentLogin);
         return new ResponseEntity<>(studentDTO, HttpStatus.OK);
