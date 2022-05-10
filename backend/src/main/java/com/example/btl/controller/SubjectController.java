@@ -18,16 +18,16 @@ public class SubjectController {
         this.subjectService = subjectService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getSubjectOfStudent(@PathVariable("id") int studentId,
+    @GetMapping()
+    public ResponseEntity<?> getSubjectOfStudent(@RequestParam int studentId,
                                                  @RequestParam int semesterId) {
         return new ResponseEntity<>(subjectService.getSubjectByStudentAndSemester(studentId, semesterId), HttpStatus.OK);
     }
 
     @GetMapping("/{id}/study_class")
-    public ResponseEntity<?> getStudyClassOfStudent(@PathVariable("id") int studentId,
+    public ResponseEntity<?> getStudyClassOfStudent(@PathVariable("id") int subjectId,
                                                     @RequestParam int semesterId,
-                                                    @RequestParam int subjectId) {
+                                                    @RequestParam int studentId) {
         return new ResponseEntity<>(subjectService.getStudyClassBySubject(studentId, semesterId, subjectId), HttpStatus.OK);
     }
 }

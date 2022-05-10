@@ -19,18 +19,18 @@ public class ReexaminationController {
         this.reexaminationService = reexaminationService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<?> getReexaminationByStudent(@PathVariable("id") int studentId) {
+    @GetMapping()
+    public ResponseEntity<?> getReexaminationByStudent(@RequestParam int studentId) {
         return new ResponseEntity<>(reexaminationService.getReexaminationByStudent(studentId), HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<?> getAll(){
         return new ResponseEntity<>(reexaminationService.getAllReexamination(), HttpStatus.OK);
     }
 
-    @PostMapping("/{id}")
-    public ResponseEntity<?> submitForm(@PathVariable("id") int studentId,
+    @PostMapping()
+    public ResponseEntity<?> submitForm(@RequestParam int studentId,
                                         @RequestParam int semesterId,
                                         @RequestParam int subjectId) {
         return new ResponseEntity<>(reexaminationService.submitForm(studentId, semesterId, subjectId), HttpStatus.CREATED);
