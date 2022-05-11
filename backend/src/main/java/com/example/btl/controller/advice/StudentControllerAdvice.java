@@ -1,7 +1,7 @@
 package com.example.btl.controller.advice;
 
 
-import com.example.btl.exception.common.NotFoundException;
+import com.example.btl.exception.common.CommonException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class StudentControllerAdvice {
 
-    @ExceptionHandler(value = NotFoundException.class)
-    public ResponseEntity<String> StudentServiceExceptionHandle(NotFoundException e) {
+    @ExceptionHandler(value = CommonException.class)
+    public ResponseEntity<String> StudentServiceExceptionHandle(CommonException e) {
         return new ResponseEntity<>(
                 e.getErrorMessage(),
                 HttpStatus.valueOf(e.getErrorCode())

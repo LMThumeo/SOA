@@ -3,10 +3,10 @@ package com.example.btl.exception.common;
 import lombok.Getter;
 
 @Getter
-public abstract class NotFoundException extends RuntimeException {
+public abstract class CommonException extends RuntimeException {
 //    private final StudentServiceError studentServiceError;
 //
-//    protected NotFoundException(StudentServiceError studentServiceError) {
+//    protected CommonException(StudentServiceError studentServiceError) {
 //        super();
 //        this.studentServiceError = studentServiceError;
 //    }
@@ -17,7 +17,7 @@ public abstract class NotFoundException extends RuntimeException {
     private final int errorCode;
     private final String errorMessage;
 
-    protected NotFoundException(int errorCode, String errorMessage) {
+    protected CommonException(int errorCode, String errorMessage) {
         super();
         this.errorCode = errorCode;
         this.errorMessage = errorMessage;

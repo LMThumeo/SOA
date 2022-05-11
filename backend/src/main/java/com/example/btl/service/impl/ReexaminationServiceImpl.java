@@ -6,6 +6,7 @@ import com.example.btl.entity.Reexamination;
 import com.example.btl.entity.SubjectSemester;
 import com.example.btl.entity.TranscriptItem;
 import com.example.btl.entity.TranscriptLine;
+import com.example.btl.exception.ReexaminationExistedException;
 import com.example.btl.exception.ReexaminationNotFoundException;
 import com.example.btl.repository.ReexaminationRepository;
 import com.example.btl.repository.TranscriptItemRepository;
@@ -52,6 +53,12 @@ public class ReexaminationServiceImpl implements ReexaminationService {
                             && subjectSemester.getSubject().getId() == subjectId;
                 })
                 .collect(Collectors.toList()).get(0);
+
+        Reexamination existedReexamination = reexaminationRepository.findByTranscriptLineId(transcriptLine.getId());
+        if (existedReexamination != null) {
+            throw new ReexaminationExistedException();
+        }
+
         Reexamination reexamination = Reexamination.builder()
                 .status("ACCEPT")
                 .transcriptLine(transcriptLine)
