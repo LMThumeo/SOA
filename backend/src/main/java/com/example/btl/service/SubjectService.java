@@ -12,7 +12,7 @@ public interface SubjectService {
 
     List<SubjectDTO> getSubjectByStudentAndSemester(int studentID, int semesterId);
 
-    List<SemesterDTO> getSemester();
+//    List<SemesterDTO> getSemester();
 
 //    StudyClassDTO getStudyClassOfStudent(int studentID, List<StudyClassDTO> studyClassDTOs);
 }

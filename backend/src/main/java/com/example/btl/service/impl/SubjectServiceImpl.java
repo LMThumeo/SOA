@@ -56,10 +56,10 @@ public class SubjectServiceImpl implements SubjectService {
                 SubjectDTO.class);
     }
 
-    @Override
-    public List<SemesterDTO> getSemester() {
-        return mappingHelper.mapList(semesterRepository.findAll(), SemesterDTO.class);
-    }
+//    @Override
+//    public List<SemesterDTO> getSemester() {
+//        return mappingHelper.mapList(semesterRepository.findAll(), SemesterDTO.class);
+//    }
 
 
 //    @Override

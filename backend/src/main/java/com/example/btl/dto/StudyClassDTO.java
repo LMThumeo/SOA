@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 
 @Data
 @Builder
@@ -27,6 +28,9 @@ public class StudyClassDTO {
 
     @JsonProperty("shift")
     private int shift;
+
+    @JsonProperty("reexamination_deadline")
+    private Date reexaminationDeadline;
 
     @JsonProperty("subject_semester")
     private SubjectSemesterDTO subjectSemester;

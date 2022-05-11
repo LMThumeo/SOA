@@ -77,10 +77,13 @@ public class ReexaminationServiceImpl implements ReexaminationService {
         transcriptItem.setPoint(reexaminationDTO.getPoint());
         transcriptItemRepository.save(transcriptItem);
 
+        String updateStatus = updateReexamination.getStatus() == null ? reexamination.getStatus() : updateReexamination.getStatus();
+        Float updatePoint = updateReexamination.getPoint() == null ? reexamination.getPoint() : updateReexamination.getPoint();
+
         reexamination = Reexamination.builder()
                 .id(reexamination.getId())
-                .status(updateReexamination.getStatus())
-                .point(updateReexamination.getPoint())
+                .status(updateStatus)
+                .point(updatePoint)
                 .submitTime(reexamination.getSubmitTime())
                 .transcriptLine(reexamination.getTranscriptLine())
                 .build();

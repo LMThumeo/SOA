@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -28,6 +29,9 @@ public class StudyClass implements Serializable {
 
     @Column(name = "shift")
     private int shift;
+
+    @Column(name = "reexamination_deadline")
+    private Date reexaminationDeadline;
 
     @ManyToOne
     @JoinColumn(name = "subject_semester_id", referencedColumnName = "id")

@@ -21,9 +21,6 @@ public class TranscriptLine implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "reexamination_deadline")
-    private Date reexaminationDeadline;
-
     @ManyToOne
     @JoinColumn(name = "study_class_id", referencedColumnName = "id")
     private StudyClass studyClass;

@@ -25,7 +25,7 @@ public class Reexamination implements Serializable {
     private String status;
 
     @Column(name = "point")
-    private String point;
+    private Float point;
 
     @Column(name = "submit_time")
     private Date submitTime;
