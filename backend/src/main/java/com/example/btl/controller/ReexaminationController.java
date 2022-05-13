@@ -32,8 +32,9 @@ public class ReexaminationController {
     @PostMapping()
     public ResponseEntity<?> submitForm(@RequestParam int studentId,
                                         @RequestParam int semesterId,
-                                        @RequestParam int subjectId) {
-        return new ResponseEntity<>(reexaminationService.submitForm(studentId, semesterId, subjectId), HttpStatus.CREATED);
+                                        @RequestParam int subjectId,
+                                        @RequestParam String status) {
+        return new ResponseEntity<>(reexaminationService.submitForm(studentId, semesterId, subjectId, status ), HttpStatus.CREATED);
     }
 
     @PutMapping()

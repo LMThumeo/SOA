@@ -45,7 +45,7 @@ public class ReexaminationServiceImpl implements ReexaminationService {
     }
 
     @Override
-    public ReexaminationDTO submitForm(int studentId, int semesterId, int subjectId) {
+    public ReexaminationDTO submitForm(int studentId, int semesterId, int subjectId, String status) {
         TranscriptLine transcriptLine = transcriptLineRepository.findByStudentId(studentId)
                 .stream().filter(tl -> {
                     SubjectSemester subjectSemester = tl.getStudyClass().getSubjectSemester();
@@ -54,13 +54,15 @@ public class ReexaminationServiceImpl implements ReexaminationService {
                 })
                 .collect(Collectors.toList()).get(0);
 
+
         Reexamination existedReexamination = reexaminationRepository.findByTranscriptLineId(transcriptLine.getId());
+
         if (existedReexamination != null) {
             throw new ReexaminationExistedException();
         }
 
         Reexamination reexamination = Reexamination.builder()
-                .status("ACCEPT")
+                .status(status)
                 .transcriptLine(transcriptLine)
                 .submitTime(new Date(new java.util.Date().getTime()))
                 .build();

@@ -12,3 +12,8 @@ spring:
 server:
   port: 8081
 #    web-application-type: none
+paypal:
+  mode: sandbox
+  client:
+    app: ATjokT8gTvMGhb15ytKihpIr4RkSKYguIsnP7olaitHngdNWE5VXisk2h19s85sBOOgCx3d7WIROTDpL
+    secret: EPuhbdWEDDeDruOiFA7xl_rSe_6U8hl7vC-nm3P_D9I79yGE2huMglU4khFTU6SZVmfqc4IJMufecW_0
